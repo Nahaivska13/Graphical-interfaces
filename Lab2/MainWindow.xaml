@@ -62,7 +62,7 @@
 
                 <!-- Кнопка OK -->
                 <DockPanel Grid.Row="1" Margin="10 5 10 10" d:IsLocked="True">
-                    <Button Width="50" DockPanel.Dock="Bottom" Content="OK" d:IsLocked="True"/>
+                    <Button Width="50" DockPanel.Dock="Bottom" Content="OK" Style="{x:Null}"/>
                 </DockPanel>
             </Grid>
         </Border>
