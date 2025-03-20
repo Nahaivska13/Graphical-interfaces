@@ -5,13 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="500">
+        Title="MainWindow" Height="450" Width="800">
 
-    <Canvas Background="Aqua">
-        <Label Canvas.Top="20" Canvas.Left="20">Label</Label>
-        <TextBox Canvas.Top="40" Canvas.Left="40">TextBox</TextBox>
-        <Button Canvas.Top="60" Canvas.Left="60">Button</Button>
-    </Canvas>
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-
+        <!-- Меню з кнопками -->
+        <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+                <Button Width="50" Height="50">
+                    <Image ToolTip="Open" Source="Images\Open.png"/>
+                </Button>
+                <Button Width="50" Height="50">
+                    <Image ToolTip="Clear" Source="Images\Clean.jpg"/>
+                </Button>
+                <Button Width="50" Height="50">
+                    <Image ToolTip="Copy" Source="Images\Copy.jpg"/>
+                </Button>
+                <Button Width="50" Height="50">
+                    <Image ToolTip="Paste" Source="Images\Paste.png"/>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
 </Window>
