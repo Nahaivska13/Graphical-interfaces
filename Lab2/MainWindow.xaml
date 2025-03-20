@@ -5,35 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="700">
 
-    <Grid ShowGridLines="False">
+    <Window.Resources>
+        <!-- Градієнтний фон -->
+        <LinearGradientBrush x:Key="LinearPanelBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="Yellow" Offset="0"/>
+            <GradientStop Color="Aqua" Offset="0.5"/>
+            <GradientStop Color="Yellow" Offset="1"/>
+        </LinearGradientBrush>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid ShowGridLines="False" d:IsLocked="True" Background="{StaticResource LinearPanelBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <!-- Меню з кнопками -->
-        <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
-            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
-                <Button Width="50" Height="50">
-                    <Image ToolTip="Open" Source="Images\Open.png"/>
+        <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" 
+                d:IsLocked="True" Background="{StaticResource LinearPanelBrush}">
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5" d:IsLocked="True">
+                <Button Width="50" Height="50" d:IsLocked="True">
+                    <Image ToolTip="Open" Source="Images\Open.png" d:IsLocked="True"/>
                 </Button>
-                <Button Width="50" Height="50">
-                    <Image ToolTip="Clear" Source="Images\Clean.jpg"/>
+                <Button Width="50" Height="50" d:IsLocked="True">
+                    <Image ToolTip="Clear" Source="Images\Clean.jpg" d:IsLocked="True"/>
                 </Button>
-                <Button Width="50" Height="50">
-                    <Image ToolTip="Copy" Source="Images\Copy.png"/>
+                <Button Width="50" Height="50" d:IsLocked="True">
+                    <Image ToolTip="Copy" Source="Images\Copy.png" d:IsLocked="True"/>
                 </Button>
-                <Button Width="50" Height="50">
-                    <Image ToolTip="Paste" Source="Images\Paste.png"/>
+                <Button Width="50" Height="50" d:IsLocked="True">
+                    <Image ToolTip="Paste" Source="Images\Paste.png" d:IsLocked="True"/>
                 </Button>
             </StackPanel>
         </Border>
 
         <!-- Текстова область -->
-        <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
-            <Grid>
+        <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" 
+                d:IsLocked="True" Background="{StaticResource LinearPanelBrush}">
+            <Grid d:IsLocked="True">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="Auto"/>
@@ -41,11 +58,11 @@
 
                 <!-- Поле введення -->
                 <TextBox Grid.Row="0" Margin="10" TextWrapping="Wrap"
-                     VerticalScrollBarVisibility="Visible"/>
+                     VerticalScrollBarVisibility="Visible" d:IsLocked="True"/>
 
                 <!-- Кнопка OK -->
-                <DockPanel Grid.Row="1" Margin="10 5 10 10">
-                    <Button Width="50" DockPanel.Dock="Bottom" Content="OK"/>
+                <DockPanel Grid.Row="1" Margin="10 5 10 10" d:IsLocked="True">
+                    <Button Width="50" DockPanel.Dock="Bottom" Content="OK" d:IsLocked="True"/>
                 </DockPanel>
             </Grid>
         </Border>
