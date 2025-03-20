@@ -23,12 +23,31 @@
                     <Image ToolTip="Clear" Source="Images\Clean.jpg"/>
                 </Button>
                 <Button Width="50" Height="50">
-                    <Image ToolTip="Copy" Source="Images\Copy.jpg"/>
+                    <Image ToolTip="Copy" Source="Images\Copy.png"/>
                 </Button>
                 <Button Width="50" Height="50">
                     <Image ToolTip="Paste" Source="Images\Paste.png"/>
                 </Button>
             </StackPanel>
+        </Border>
+
+        <!-- Текстова область -->
+        <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Поле введення -->
+                <TextBox Grid.Row="0" Margin="10" TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Visible"/>
+
+                <!-- Кнопка OK -->
+                <DockPanel Grid.Row="1" Margin="10 5 10 10">
+                    <Button Width="50" DockPanel.Dock="Bottom" Content="OK"/>
+                </DockPanel>
+            </Grid>
         </Border>
     </Grid>
 </Window>
