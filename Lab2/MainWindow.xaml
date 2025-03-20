@@ -30,18 +30,18 @@
 
         <!-- Меню з кнопками -->
         <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" 
-                d:IsLocked="True" Background="{StaticResource LinearPanelBrush}">
+               d:IsLocked="True" Background="{StaticResource LinearPanelBrush}">
             <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5" d:IsLocked="True">
-                <Button Width="50" Height="50" d:IsLocked="True">
+                <Button Width="50" Height="50" Background="#FFCBBEBE" d:IsLocked="True">
                     <Image ToolTip="Open" Source="Images\Open.png" d:IsLocked="True"/>
                 </Button>
-                <Button Width="50" Height="50" d:IsLocked="True">
-                    <Image ToolTip="Clear" Source="Images\Clean.jpg" d:IsLocked="True"/>
+                <Button Width="50" Height="50" Background="#FFCBBEBE" d:IsLocked="True">
+                    <Image ToolTip="Clear" Source="Images\Clean.png" d:IsLocked="True"/>
                 </Button>
-                <Button Width="50" Height="50" d:IsLocked="True">
+                <Button Width="50" Height="50" Background="#FFCBBEBE" d:IsLocked="True">
                     <Image ToolTip="Copy" Source="Images\Copy.png" d:IsLocked="True"/>
                 </Button>
-                <Button Width="50" Height="50" d:IsLocked="True">
+                <Button Width="50" Height="50" Background="#FFCBBEBE" d:IsLocked="True">
                     <Image ToolTip="Paste" Source="Images\Paste.png" d:IsLocked="True"/>
                 </Button>
             </StackPanel>
