@@ -9,10 +9,10 @@
 
     <Window.Resources>
         <!-- Градієнтний фон -->
-        <LinearGradientBrush x:Key="LinearPanelBrush" StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="Yellow" Offset="0"/>
-            <GradientStop Color="Aqua" Offset="0.5"/>
-            <GradientStop Color="Yellow" Offset="1"/>
+        <LinearGradientBrush x:Key="LinearPanelBrush">
+            <GradientStop Color="Yellow" Offset="0"></GradientStop>
+            <GradientStop Color="Aqua" Offset="0.5"></GradientStop>
+            <GradientStop Color="Yellow" Offset="0.8"></GradientStop>
         </LinearGradientBrush>
 
         <Style TargetType="Button">
