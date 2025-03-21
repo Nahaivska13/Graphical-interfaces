@@ -8,11 +8,10 @@
         Title="MainWindow" Height="450" Width="700">
 
     <Window.Resources>
-        <!-- Градієнтний фон -->
         <LinearGradientBrush x:Key="LinearPanelBrush">
-            <GradientStop Color="Yellow" Offset="0"></GradientStop>
-            <GradientStop Color="Aqua" Offset="0.5"></GradientStop>
-            <GradientStop Color="Yellow" Offset="0.8"></GradientStop>
+            <GradientStop Color="Yellow" Offset="0"/>
+            <GradientStop Color="Aqua" Offset="0.5"/>
+            <GradientStop Color="Yellow" Offset="0.8"/>
         </LinearGradientBrush>
 
         <Style TargetType="Button">
@@ -22,34 +21,32 @@
         </Style>
     </Window.Resources>
 
-    <Grid ShowGridLines="False" d:IsLocked="True" Background="{StaticResource LinearPanelBrush}">
+    <Grid ShowGridLines="False" Background="{StaticResource LinearPanelBrush}" d:IsLocked="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <!-- Меню з кнопками -->
-        <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" 
-               d:IsLocked="True" Background="{StaticResource LinearPanelBrush}">
+        <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" Background="{StaticResource LinearPanelBrush}" d:IsLocked="True">
             <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5" d:IsLocked="True">
-                <Button Width="50" Height="50" Background="#FFCBBEBE" d:IsLocked="True">
+                <Button Width="50" Height="50" Command="Open" d:IsLocked="True">
                     <Image ToolTip="Open" Source="Images\Open.png" d:IsLocked="True"/>
                 </Button>
-                <Button Width="50" Height="50" Background="#FFCBBEBE" d:IsLocked="True">
+                <Button Width="50" Height="50" Click="ClearButton_Click" d:IsLocked="True">
                     <Image ToolTip="Clear" Source="Images\Clean.png" d:IsLocked="True"/>
                 </Button>
-                <Button Width="50" Height="50" Background="#FFCBBEBE" d:IsLocked="True">
+                <Button Width="50" Height="50" Command="Copy" CommandTarget="{Binding ElementName=MainTextBox}" d:IsLocked="True">
                     <Image ToolTip="Copy" Source="Images\Copy.png" d:IsLocked="True"/>
                 </Button>
-                <Button Width="50" Height="50" Background="#FFCBBEBE" d:IsLocked="True">
+                <Button Width="50" Height="50" Command="Paste" CommandTarget="{Binding ElementName=MainTextBox}" d:IsLocked="True">
                     <Image ToolTip="Paste" Source="Images\Paste.png" d:IsLocked="True"/>
                 </Button>
             </StackPanel>
         </Border>
 
         <!-- Текстова область -->
-        <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" 
-                d:IsLocked="True" Background="{StaticResource LinearPanelBrush}">
+        <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" Background="{StaticResource LinearPanelBrush}" d:IsLocked="True">
             <Grid d:IsLocked="True">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -57,12 +54,15 @@
                 </Grid.RowDefinitions>
 
                 <!-- Поле введення -->
-                <TextBox Grid.Row="0" Margin="10" TextWrapping="Wrap"
-                     VerticalScrollBarVisibility="Visible" d:IsLocked="True"/>
+                <TextBox x:Name="MainTextBox" Grid.Row="0" Margin="10" TextWrapping="Wrap"
+                         VerticalScrollBarVisibility="Visible"
+                         FontSize="{Binding ElementName=fontSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" d:IsLocked="True"/>
 
-                <!-- Кнопка OK -->
+                <!-- Панель керування -->
                 <DockPanel Grid.Row="1" Margin="10 5 10 10" d:IsLocked="True">
-                    <Button Width="50" DockPanel.Dock="Bottom" Content="OK" Style="{x:Null}"/>
+                    <Label Content="Розмір шрифту:" VerticalAlignment="Center" d:IsLocked="True"/>
+                    <Slider x:Name="fontSlider" Margin="4" MinWidth="100" Maximum="100" Minimum="12" Value="14" d:IsLocked="True"/>
+                    <Button Width="50" DockPanel.Dock="Right" Content="OK" Command="Save" d:IsLocked="True"/>
                 </DockPanel>
             </Grid>
         </Border>
